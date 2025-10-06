@@ -53,6 +53,14 @@ A Chrome extension that automatically scrapes LinkedIn profiles and stores the d
 4. Export all data as JSON
 5. Delete individual or all profiles
 
+#### Extension Interface
+
+![Extension Popup - Statistics](popup_screenshot.png)
+*Statistics dashboard showing total profiles, companies, and top skills*
+
+![Extension Popup - Profile List](popup_screenshot2.png)
+*Scraped profiles with detailed information and management options*
+
 ## 📊 Data Structure
 
 ```json
