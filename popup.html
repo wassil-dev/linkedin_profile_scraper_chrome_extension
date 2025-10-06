@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Profile Scraper</title>
+  <style>
+    body {
+      width: 450px;
+      min-height: 200px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 20px;
+      color: #0a66c2;
+      margin-bottom: 20px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-primary { background: #0a66c2; color: white; }
+    .btn-secondary { background: #666; color: white; }
+    .btn-danger { background: #dc3545; color: white; }
+    .status {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: none;
+    }
+    .status.success { background: #d4edda; color: #155724; display: block; }
+    .status.error { background: #f8d7da; color: #721c24; display: block; }
+    .profile-item {
+      background: #f8f9fa;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+    .profile-item h3 { margin: 0 0 5px 0; font-size: 14px; color: #0a66c2; }
+    .profile-item p { margin: 2px 0; color: #666; }
+    .btn-small { padding: 5px 10px; font-size: 12px; margin-right: 5px; }
+  </style>
+</head>
+<body>
+  <h1>LinkedIn Profile Scraper</h1>
+
+  <button id="scrapeBtn" class="btn btn-primary">Scrape Current Profile</button>
+  <button id="exportBtn" class="btn btn-secondary">Export All as JSON</button>
+  <button id="clearBtn" class="btn btn-danger">Clear All Data</button>
+
+  <div class="status" id="status"></div>
+
+  <!-- Statistics Dashboard -->
+  <div id="stats" style="background: #f0f8ff; padding: 15px; margin: 15px 0; border-radius: 5px; display: none;">
+    <h3 style="margin: 0 0 10px 0; font-size: 16px;">Statistics</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px;">
+      <div><strong>Total Profiles:</strong> <span id="statTotal">0</span></div>
+      <div><strong>Companies:</strong> <span id="statCompanies">0</span></div>
+      <div><strong>Avg Experience:</strong> <span id="statAvgExp">0</span></div>
+      <div><strong>Top Skill:</strong> <span id="statTopSkill">-</span></div>
+    </div>
+  </div>
+
+  <!-- Search and Filter -->
+  <div style="margin: 15px 0;">
+    <input type="text" id="searchBox" placeholder="Search by name, company, skill..."
+           style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px;">
+  </div>
+
+  <h2>Scraped Profiles (<span id="profileCount">0</span>)</h2>
+  <div id="profilesList"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
